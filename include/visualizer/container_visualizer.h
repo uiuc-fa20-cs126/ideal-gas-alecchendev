@@ -4,7 +4,6 @@
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
-#include "container_visualizer.h"
 
 namespace idealgas {
 
@@ -14,18 +13,17 @@ namespace visualizer {
  * Allows a user to draw a digit on a sketchpad and uses Naive Bayes to
  * classify it.
  */
-class IdealGasApp : public ci::app::App {
+class ContainerVisualizer {
  public:
-  IdealGasApp();
+  ContainerVisualizer() {
+    top_left_corner_ = vec2(50, 50);
+  }
+  ContainerVisualizer(vec2 top_left_corner);
 
-  void draw() override;
-
-  const double kWindowWidth = 1080;
-  const double kWindowHeight = 720;
+  void Draw(ParticleContainer particle_container);
 
  private:
-  ParticleContainer particle_container_;
-  ContainerVisualizer container_visualizer_;
+  vec2 top_left_corner_;
 
 };
 
