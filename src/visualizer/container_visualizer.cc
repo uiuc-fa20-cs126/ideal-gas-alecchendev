@@ -23,7 +23,7 @@ void ContainerVisualizer::Draw(const ParticleContainer& particle_container) {
   // draw particles
   for (Particle particle : particle_container.getParticles()) {
     ci::gl::color(particle.color);
-    ci::gl::drawSolidCircle(top_left_corner_ + particle.position, static_cast<float>(particle.radius) );
+    ci::gl::drawSolidCircle(top_left_corner_ + particle.position, particle.radius);
   }
 
 

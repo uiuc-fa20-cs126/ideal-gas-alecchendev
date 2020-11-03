@@ -11,7 +11,7 @@ using ci::Color;
 namespace idealgas {
 
 struct Particle {
-  Particle(double radius, double mass, Color color, vec2 position, vec2 velocity) {
+  Particle(float radius, float mass, Color color, vec2 position, vec2 velocity) {
     this->radius = radius;
     this->mass = mass;
     this->color = color;
@@ -19,8 +19,8 @@ struct Particle {
     this->velocity = velocity;
   }
 
-  double radius;
-  double mass;
+  float radius;
+  float mass;
   Color color;
   vec2 position;
   vec2 velocity;

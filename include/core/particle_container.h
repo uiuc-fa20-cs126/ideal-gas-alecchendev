@@ -1,5 +1,6 @@
 #pragma once
 #include "cinder/gl/gl.h"
+#include "cinder/Rand.h"
 #include <map>
 #include <string>
 #include <vector>
@@ -25,7 +26,7 @@ class ParticleContainer {
    * @param num_particles Total number of particles to initialize
    * @param particle_templates Vector of particles that gives templates for particles ot be created
    */
-  ParticleContainer(double width, double height, double time_step, int num_particles,
+  ParticleContainer(float width, float height, float time_step, int num_particles,
                     vector<Particle> particle_templates);
 
   /**
@@ -49,14 +50,14 @@ class ParticleContainer {
   void CheckCollisionWall(Particle& particle);
 
   const vector<Particle> &getParticles() const;
-  double getWidth() const;
-  double getHeight() const;
+  float getWidth() const;
+  float getHeight() const;
 
 private:
 
-  double width_ = 720;
-  double height_ = 480;
-  double time_step_ = 1;
+  float width_ = 720;
+  float height_ = 480;
+  float time_step_ = 1;
   vector<Particle> particles_;
 };
 
