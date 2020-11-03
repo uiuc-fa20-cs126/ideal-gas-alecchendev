@@ -20,7 +20,7 @@ class ContainerVisualizer {
   }
   ContainerVisualizer(vec2 top_left_corner);
 
-  void Draw(ParticleContainer particle_container);
+  void Draw(const ParticleContainer& particle_container);
 
  private:
   vec2 top_left_corner_;

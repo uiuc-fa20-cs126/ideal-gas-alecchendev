@@ -39,22 +39,25 @@ class ParticleContainer {
    * @param particle
    * @param other_particle
    */
-  void CheckCollision(Particle& particle, Particle& other_particle);
+  void CheckCollisionParticle(Particle& particle, Particle& other_particle);
+
+  /**
+   * Checks if a given particle will collide with a wall on the next timestep
+   * Updates velocity of the particle after colliding
+   * @param particle
+   */
+  void CheckCollisionWall(Particle& particle);
 
   const vector<Particle> &getParticles() const;
+  double getWidth() const;
+  double getHeight() const;
 
 private:
 
   double width_ = 720;
   double height_ = 480;
-public:
-    double getWidth() const;
-
-    double getHeight() const;
-
-private:
-    double time_step_ = 1;
-  vector<Particle> particles;
+  double time_step_ = 1;
+  vector<Particle> particles_;
 };
 
 }  // namespace idealgas

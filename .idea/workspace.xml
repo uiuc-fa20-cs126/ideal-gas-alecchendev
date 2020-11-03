@@ -32,16 +32,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="38e14706-40ae-44fb-bfc3-71f19964464a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/core/particle.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/visualizer/container_visualizer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visualizer/container_visualizer.cc" afterDir="false" />
+    <list default="true" id="38e14706-40ae-44fb-bfc3-71f19964464a" name="Default Changelist" comment="Write header files and get window displaying container">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/core/particle_container.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/core/particle_container.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/visualizer/container_visualizer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/visualizer/container_visualizer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/visualizer/ideal_gas_app.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/visualizer/ideal_gas_app.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/particle_container.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/particle_container.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visualizer/container_visualizer.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer/container_visualizer.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/visualizer/ideal_gas_app.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer/ideal_gas_app.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,8 +115,16 @@
       <workItem from="1604203589797" duration="97000" />
       <workItem from="1604203735047" duration="1419000" />
       <workItem from="1604252432383" duration="3545000" />
-      <workItem from="1604342828185" duration="7427000" />
+      <workItem from="1604342828185" duration="10542000" />
     </task>
+    <task id="LOCAL-00001" summary="Write header files and get window displaying container">
+      <created>1604350468367</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604350468367</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +141,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Write header files and get window displaying container" />
+    <option name="LAST_COMMIT_MESSAGE" value="Write header files and get window displaying container" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="175" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604285091262">
@@ -154,25 +163,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="326" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604203569354" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1604350287523">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1604368755521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604350287523" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1604350287522">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604368755521" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1604368755521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604350287522" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1604350287522">
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604368755521" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1604368755521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604350287522" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1604350287522">
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604368755521" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1604368755521">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604350287522" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604368755521" />
     <state x="456" y="168" key="SettingsEditor" timestamp="1604347003147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="456" y="168" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1604347003147" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1604350472538">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604350472538" />
   </component>
 </project>

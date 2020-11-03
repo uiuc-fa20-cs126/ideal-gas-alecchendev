@@ -18,6 +18,7 @@ class IdealGasApp : public ci::app::App {
  public:
   IdealGasApp();
 
+  void update() override;
   void draw() override;
 
   const double kWindowWidth = 1080;
