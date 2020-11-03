@@ -21,10 +21,12 @@ class IdealGasApp : public ci::app::App {
   void update() override;
   void draw() override;
 
-  const double kWindowWidth = 1080;
-  const double kWindowHeight = 720;
+  void IdealGasApp::keyDown(ci::app::KeyEvent event);
 
  private:
+  const double kWindowWidth = 1080;
+  const double kWindowHeight = 720;
+  float time_step_ = 1;
   ParticleContainer particle_container_;
   ContainerVisualizer container_visualizer_;
 

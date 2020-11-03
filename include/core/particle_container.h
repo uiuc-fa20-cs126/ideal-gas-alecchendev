@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "particle.h"
+#include <math.h>
 
 using glm::vec2;
 using std::vector;
@@ -17,22 +18,23 @@ class ParticleContainer {
   ParticleContainer() {
     width_ = 720;
     height_ = 480;
-    time_step_ = 1;
   }
 
   /**
    * Initialize equal number of particles for each template provided
    * Distributes pixel positions in a grid, gives them random directions given magnitude of template velocity
+   * @param width float representing horizontal size of container
+   * @param height float representing vertical size of container
    * @param num_particles Total number of particles to initialize
    * @param particle_templates Vector of particles that gives templates for particles ot be created
    */
-  ParticleContainer(float width, float height, float time_step, int num_particles,
+  ParticleContainer(float width, float height, int num_particles,
                     vector<Particle> particle_templates);
 
   /**
    * Checks for particle collisions, updates velocities, and updates positions
    */
-  void Update();
+  void Update(const float& time_step);
 
   /**
    * Checks if a given particle will collide with another particle on the next timestep
@@ -57,7 +59,6 @@ private:
 
   float width_ = 720;
   float height_ = 480;
-  float time_step_ = 1;
   vector<Particle> particles_;
 };
 

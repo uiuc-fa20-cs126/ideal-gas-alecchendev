@@ -14,7 +14,7 @@ void ContainerVisualizer::Draw(const ParticleContainer& particle_container) {
   vec2 bottom_right_corner = top_left_corner_ + vec2(particle_container.getWidth(), particle_container.getHeight());
   ci::Rectf pixel_bounding_box(top_left_corner_, bottom_right_corner);
 
-  ci::gl::color(ci::Color8u(255, 252, 165));
+  ci::gl::color(ci::Color8u(255, 252, 245));
   ci::gl::drawSolidRect(pixel_bounding_box);
 
   ci::gl::color(0, 0, 0);
