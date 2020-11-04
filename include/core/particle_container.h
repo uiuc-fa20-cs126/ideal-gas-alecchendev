@@ -37,6 +37,12 @@ class ParticleContainer {
    */
   void Update(const float& time_step);
 
+  /**
+   * Adds particle to containers particle list
+   * @param particle Particle to be added
+   */
+  void AddParticle(const Particle& particle);
+
   const vector<Particle>& getParticles() const;
   const float& getWidth() const;
   const float& getHeight() const;

@@ -15,8 +15,12 @@ ParticleContainer::ParticleContainer(float width, float height, int num_particle
     new_particle.position = vec2(Rand::randFloat(new_particle.radius, width_ - new_particle.radius),
                                  Rand::randFloat(new_particle.radius, height_ - new_particle.radius));
     new_particle.velocity = Rand::randFloat(0, new_particle.radius) * Rand::randVec2();
-    particles_.push_back(new_particle);
+    AddParticle(new_particle);
   }
+}
+
+void ParticleContainer::AddParticle(const Particle &particle) {
+  particles_.push_back(particle);
 }
 
 void ParticleContainer::Update(const float& time_step) {

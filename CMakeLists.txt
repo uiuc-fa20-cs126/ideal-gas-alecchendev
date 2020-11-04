@@ -55,6 +55,8 @@ list(APPEND SOURCE_FILES    ${CORE_SOURCE_FILES}
                             src/visualizer/ideal_gas_app.cc
                             src/visualizer/container_visualizer.cc)
 
+list(APPEND TEST_FILES tests/particle_container_test.cc)
+
 ci_make_app(
         APP_NAME        ideal-gas-simulation
         CINDER_PATH     ${CINDER_PATH}
