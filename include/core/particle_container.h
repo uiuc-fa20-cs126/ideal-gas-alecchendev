@@ -13,12 +13,12 @@ using ci::Color;
 
 namespace idealgas {
 
+/**
+ * Holds particles and handles all movement and collisions
+ */
 class ParticleContainer {
  public:
-  ParticleContainer() {
-    width_ = 720;
-    height_ = 480;
-  }
+  ParticleContainer(){}
 
   /**
    * Initialize equal number of particles for each template provided
@@ -29,13 +29,19 @@ class ParticleContainer {
    * @param particle_templates Vector of particles that gives templates for particles ot be created
    */
   ParticleContainer(float width, float height, int num_particles,
-                    vector<Particle> particle_templates);
+                    vector<Particle> particle_types);
 
   /**
    * Checks for particle collisions, updates velocities, and updates positions
+   * @param time_step float to indicate the rate of passing time to increase magnitude of movement
    */
   void Update(const float& time_step);
 
+  const vector<Particle>& getParticles() const;
+  const float& getWidth() const;
+  const float& getHeight() const;
+
+private:
   /**
    * Checks if a given particle will collide with another particle on the next timestep
    * Updates velocity of both particles after colliding
@@ -51,14 +57,8 @@ class ParticleContainer {
    */
   void CheckCollisionWall(Particle& particle);
 
-  const vector<Particle> &getParticles() const;
-  float getWidth() const;
-  float getHeight() const;
-
-private:
-
-  float width_ = 720;
-  float height_ = 480;
+  float width_;
+  float height_;
   vector<Particle> particles_;
 };
 

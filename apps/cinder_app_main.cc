@@ -4,6 +4,7 @@ using idealgas::visualizer::IdealGasApp;
 
 void prepareSettings(IdealGasApp::Settings* settings) {
   settings->setResizable(false);
+  settings->setFrameRate( 60.0f );
 }
 
 // This line is a macro that expands into an "int main()" function.

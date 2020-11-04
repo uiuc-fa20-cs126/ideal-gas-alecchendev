@@ -4,8 +4,10 @@ namespace idealgas {
 
 namespace visualizer {
 
-ContainerVisualizer::ContainerVisualizer(vec2 top_left_corner) {
+ContainerVisualizer::ContainerVisualizer(vec2 top_left_corner, Color container_background, Color container_stroke) {
   top_left_corner_ = top_left_corner;
+  container_background_ = container_background;
+  container_stroke_ = container_stroke;
 }
 
 void ContainerVisualizer::Draw(const ParticleContainer& particle_container) {
@@ -14,10 +16,10 @@ void ContainerVisualizer::Draw(const ParticleContainer& particle_container) {
   vec2 bottom_right_corner = top_left_corner_ + vec2(particle_container.getWidth(), particle_container.getHeight());
   ci::Rectf pixel_bounding_box(top_left_corner_, bottom_right_corner);
 
-  ci::gl::color(ci::Color8u(255, 252, 245));
+  ci::gl::color(container_background_);
   ci::gl::drawSolidRect(pixel_bounding_box);
 
-  ci::gl::color(0, 0, 0);
+  ci::gl::color(container_stroke_);
   ci::gl::drawStrokedRect(pixel_bounding_box);
 
   // draw particles

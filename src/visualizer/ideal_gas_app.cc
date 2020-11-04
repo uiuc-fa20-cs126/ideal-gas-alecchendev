@@ -6,8 +6,8 @@ namespace visualizer {
 
 IdealGasApp::IdealGasApp() {
   ci::app::setWindowSize((int) kWindowWidth, (int) kWindowHeight);
-  particle_container_ = ParticleContainer(720, 480, 50, vector<Particle>());
-  container_visualizer_ = ContainerVisualizer(vec2(100, 50));
+  particle_container_ = ParticleContainer(720, 480, 100, kParticleTypes);
+  container_visualizer_ = ContainerVisualizer(vec2(100, 50), ci::Color8u(255, 252, 245), ci::Color(0, 0, 0));
 }
 
 void IdealGasApp::update() {
@@ -15,19 +15,18 @@ void IdealGasApp::update() {
 };
 
 void IdealGasApp::draw() {
-  ci::Color8u background_color(242, 239, 233);  // light yellow
-  ci::gl::clear(background_color);
+  ci::gl::clear(background_color_);
   container_visualizer_.Draw(particle_container_);
 }
 
 void IdealGasApp::keyDown(ci::app::KeyEvent event) {
   switch (event.getCode()) {
     case ci::app::KeyEvent::KEY_RIGHT: {
-      time_step_ += 0.25f;
+      time_step_ += (time_step_ < kMaxTimeStep) * kTimeStepIncrement;
       break;
     }
     case ci::app::KeyEvent::KEY_LEFT: {
-      time_step_ -= (time_step_ >= 0.25f) * 0.25f;
+      time_step_ -= (time_step_ >= kTimeStepIncrement) * kTimeStepIncrement;
       break;
     }
     case ci::app::KeyEvent::KEY_SPACE: {
