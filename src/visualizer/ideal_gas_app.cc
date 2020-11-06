@@ -7,7 +7,7 @@ namespace visualizer {
 IdealGasApp::IdealGasApp() {
   ci::app::setWindowSize((int) kWindowWidth, (int) kWindowHeight);
   particle_container_ = ParticleContainer(720, 480, 100, kParticleTypes);
-  container_visualizer_ = ContainerVisualizer(vec2(100, 50), ci::Color8u(255, 252, 245), ci::Color(0, 0, 0));
+  container_visualizer_ = ContainerVisualizer(vec2(50, 50), ci::Color8u(255, 252, 245), ci::Color(0, 0, 0));
 }
 
 void IdealGasApp::update() {

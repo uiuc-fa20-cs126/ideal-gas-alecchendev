@@ -33,11 +33,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e14706-40ae-44fb-bfc3-71f19964464a" name="Default Changelist" comment="Write header files and get window displaying container">
-      <change afterPath="$PROJECT_DIR$/tests/particle_container_test.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/core/particle_container.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/core/particle_container.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/particle_container.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/particle_container.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/visualizer/ideal_gas_app.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/visualizer/ideal_gas_app.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visualizer/ideal_gas_app.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer/ideal_gas_app.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,11 +73,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Catch.All in particle_container_test.cc">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in particle_container_test.cc" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="ideal-gas-test" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="ideal-gas-test" TEST_PATTERN="[#particle_container_test]" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -102,9 +95,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Catch.All in particle_container_test.cc" />
       <item itemvalue="CMake Application.ideal-gas-simulation" />
       <item itemvalue="CMake Application.ideal-gas-test" />
-      <item itemvalue="Catch.All in particle_container_test.cc" />
     </list>
     <recent_temporary>
       <list>
@@ -126,7 +119,8 @@
       <workItem from="1604203735047" duration="1419000" />
       <workItem from="1604252432383" duration="3545000" />
       <workItem from="1604342828185" duration="13966000" />
-      <workItem from="1604428932059" duration="14348000" />
+      <workItem from="1604428932059" duration="14457000" />
+      <workItem from="1604606543322" duration="2248000" />
     </task>
     <task id="LOCAL-00001" summary="Write header files and get window displaying container">
       <created>1604350468367</created>
@@ -174,22 +168,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="326" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604203569354" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1604462726428">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1604612452749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604462726428" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1604462726428">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604612452749" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1604612452749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604462726428" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1604462726428">
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604612452749" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1604612452749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604462726428" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1604462726428">
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604612452749" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1604612452749">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604462726428" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604612452749" />
     <state x="456" y="168" key="SettingsEditor" timestamp="1604347003147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

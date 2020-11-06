@@ -46,8 +46,8 @@ class IdealGasApp : public ci::app::App {
 
   // Provides templates for particles to be constructed from
   const vector<Particle> kParticleTypes = vector<Particle>({
-                                          Particle(5, 3, ci::Color8u(189, 137, 34), vec2(0, 0), vec2(0, 0)),
-                                          Particle(3, 1, ci::Color8u(255, 170, 0), vec2(0, 0), vec2(0, 0)),
+                                          Particle(5, 3, ci::Color8u(52, 146, 235), vec2(0, 0), vec2(0, 0)),
+                                          Particle(3, 1, ci::Color8u(235, 64, 52), vec2(0, 0), vec2(0, 0)),
   });
   ParticleContainer particle_container_;
   ContainerVisualizer container_visualizer_;
