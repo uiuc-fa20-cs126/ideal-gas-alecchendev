@@ -43,6 +43,18 @@ class ParticleContainer {
    */
   void AddParticle(const Particle& particle);
 
+  /**
+   * Gets a list of speeds for each group of particles of the same mass
+   * @return Vector of vectors of floats each containing speeds for particles of each mass
+   */
+  vector<vector<float>> GetParticleSpeeds() const;
+
+  /**
+   * Gets a list of positions for each group of particles of the same mass
+   * @return Vector of vectors of vec2 each containing positions for particles of each mass
+   */
+  vector<vector<vec2>> GetParticlePositions() const;
+
   const vector<Particle>& getParticles() const;
   const float& getWidth() const;
   const float& getHeight() const;

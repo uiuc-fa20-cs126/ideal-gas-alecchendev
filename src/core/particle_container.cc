@@ -3,6 +3,8 @@
 #include <iostream>
 
 using ci::Rand;
+using std::map;
+using std::pair;
 
 namespace idealgas {
 
@@ -33,6 +35,36 @@ void ParticleContainer::Update(const float& time_step) {
     }
     CheckCollisionWall(particle);
   }
+}
+
+vector<vector<float>> ParticleContainer::GetParticleSpeeds() const {
+  map<float, vector<float>> particle_mass_speeds;
+  for (Particle particle : particles_) {
+    if (particle_mass_speeds.find(particle.mass) == particle_mass_speeds.end() ) {
+      particle_mass_speeds.insert(pair<float, vector<float>>(particle.mass, vector<float>{}));
+    }
+    particle_mass_speeds[particle.mass].push_back((length(particle.velocity)));
+  }
+  vector<vector<float>> particle_speeds;
+  for(map<float, vector<float>>::iterator it = particle_mass_speeds.begin(); it != particle_mass_speeds.end(); ++it) {
+    particle_speeds.push_back(it->second);
+  }
+  return particle_speeds;
+}
+
+vector<vector<vec2>> ParticleContainer::GetParticlePositions() const {
+  map<float, vector<vec2>> particle_mass_positions;
+  for (Particle particle : particles_) {
+    if (particle_mass_positions.find(particle.mass) == particle_mass_positions.end() ) {
+      particle_mass_positions.insert(pair<float, vector<vec2>>(particle.mass, vector<vec2>{}));
+    }
+    particle_mass_positions[particle.mass].push_back((particle.position));
+  }
+  vector<vector<vec2>> particle_positions;
+  for(map<float, vector<vec2>>::iterator it = particle_mass_positions.begin(); it != particle_mass_positions.end(); ++it) {
+    particle_positions.push_back(it->second);
+  }
+  return particle_positions;
 }
 
 void ParticleContainer::CheckCollisionParticle(Particle& particle, Particle& other_particle) {
