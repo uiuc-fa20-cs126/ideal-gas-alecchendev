@@ -4,7 +4,7 @@
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
-#include "container_visualizer.h"
+#include "plot.h"
 
 using ci::Color;
 
@@ -36,6 +36,12 @@ class IdealGasApp : public ci::app::App {
    */
   void IdealGasApp::keyDown(ci::app::KeyEvent event);
 
+  /**
+   * Keeps track of location of the mouse anytime it moves
+   * @param event
+   */
+  void IdealGasApp::mouseMove(ci::app::MouseEvent event);
+
  private:
   Color background_color_ = ci::Color8u(242, 239, 233);
   const double kWindowWidth = 1200;
@@ -46,12 +52,14 @@ class IdealGasApp : public ci::app::App {
 
   // Provides templates for particles to be constructed from
   const vector<Particle> kParticleTypes = vector<Particle>({
-                                          Particle(7, 4, ci::Color8u(52, 146, 235), vec2(0, 0), vec2(0, 0)),
-                                          Particle(8, 5, ci::Color8u(235, 150, 52), vec2(0, 0), vec2(0, 0)),
-                                          Particle(6, 3, ci::Color8u(130, 92, 48), vec2(0, 0), vec2(0, 0)),
+                                          Particle(7, 4, vec2(0, 0), vec2(0, 0)),
+                                          Particle(8, 5, vec2(0, 0), vec2(0, 0)),
+                                          Particle(6, 3, vec2(0, 0), vec2(0, 0)),
   });
   ParticleContainer particle_container_;
-  ContainerVisualizer container_visualizer_;
+  vector<Plot> plots_;
+
+  vec2 mouse_location_;
 
 };
 

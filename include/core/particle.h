@@ -11,17 +11,17 @@ using ci::Color;
 namespace idealgas {
 
 struct Particle {
-  Particle(float radius, float mass, Color color, vec2 position, vec2 velocity) {
+  Particle(float radius, float mass, vec2 position, vec2 velocity) {
     this->radius = radius;
+    if (mass <= 0.0f)
+      throw std::invalid_argument("Mass cannot be 0 or less.");
     this->mass = mass;
-    this->color = color;
     this->position = position;
     this->velocity = velocity;
   }
 
   float radius;
   float mass;
-  Color color;
   vec2 position;
   vec2 velocity;
 };

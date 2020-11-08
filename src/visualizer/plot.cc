@@ -13,7 +13,6 @@ Plot::Plot(vec2 top_left_corner, float width, float height, Color background_col
 }
 
 void Plot::Draw() {
-  // draw container
   vec2 bottom_right_corner = top_left_corner_ + vec2(width_, height_);
   ci::Rectf pixel_bounding_box(top_left_corner_, bottom_right_corner);
 
@@ -25,7 +24,6 @@ void Plot::Draw() {
 };
 
 void Plot::DrawHistogram(const vector<float>& values, const int& n_bins, const Color& color) {
-  Draw();
 
   float max_frequency = 0;
   float max_value = *max_element(values.begin(), values.end());
@@ -52,9 +50,10 @@ void Plot::DrawHistogram(const vector<float>& values, const int& n_bins, const C
 }
 
 void Plot::DrawScatter(const vector<vec2>& positions, const float& radius, const Color& color) {
+  vec2 origin = top_left_corner_ + vec2(0, height_);
   for (vec2 position : positions) {
     ci::gl::color(color);
-    ci::gl::drawSolidCircle(top_left_corner_ + position, radius);
+    ci::gl::drawSolidCircle(origin + vec2(position.x, -position.y), radius);
   }
 }
 

@@ -25,15 +25,22 @@ void ParticleContainer::AddParticle(const Particle &particle) {
   particles_.push_back(particle);
 }
 
-void ParticleContainer::Update(const float& time_step) {
-  for (Particle& particle : particles_) {
-    particle.position += particle.velocity * time_step;
-  }
+void ParticleContainer::Update(const float& time_step, const vec2& mouse_location) {
   for (Particle& particle : particles_) {
     for (Particle& other_particle : particles_) {
       CheckCollisionParticle(particle, other_particle);
     }
     CheckCollisionWall(particle);
+  }
+  for (Particle& particle : particles_) {
+    particle.position += particle.velocity * time_step;
+    float dist_from_mouse = length(particle.position - mouse_location);
+    //float scale = -0.05f * (dist_from_mouse + 5.0f) * (dist_from_mouse - 20.0f);
+    //if (scale < 0.0f) scale = 0.0f;
+    //particle.velocity *= static_cast<float>(dist_from_mouse > 40.0f);// * (mouse_location - particle.position);
+    particle.velocity += static_cast<float>(dist_from_mouse <= 75.0f) * 1.0f / max(dist_from_mouse, 1.0f) * (particle.position - mouse_location);
+    particle.velocity += static_cast<float>(dist_from_mouse > 75.0f) * (1.0f) / max(dist_from_mouse, 1.0f) / dist_from_mouse * (mouse_location - particle.position);
+
   }
 }
 

@@ -33,14 +33,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38e14706-40ae-44fb-bfc3-71f19964464a" name="Default Changelist" comment="Write header files and get window displaying container">
-      <change afterPath="$PROJECT_DIR$/include/visualizer/plot.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visualizer/plot.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/core/particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/core/particle.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/core/particle_container.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/core/particle_container.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/visualizer/container_visualizer.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/include/visualizer/ideal_gas_app.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/visualizer/ideal_gas_app.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/visualizer/plot.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/visualizer/plot.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/particle_container.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/particle_container.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visualizer/container_visualizer.cc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/visualizer/ideal_gas_app.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer/ideal_gas_app.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visualizer/plot.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer/plot.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,15 +81,15 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.ideal-gas-simulation">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in particle_container_test.cc" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" temporary="true" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="ideal-gas-test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="ideal-gas-test" TEST_PATTERN="[#particle_container_test]" TEST_MODE="PATTERN">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="ideal-gas-simulation" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ideal-gas" TARGET_NAME="ideal-gas-simulation" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ideal-gas" RUN_TARGET_NAME="ideal-gas-simulation">
@@ -132,7 +135,8 @@
       <workItem from="1604428932059" duration="14457000" />
       <workItem from="1604606543322" duration="2248000" />
       <workItem from="1604636327827" duration="740000" />
-      <workItem from="1604684249583" duration="12358000" />
+      <workItem from="1604684249583" duration="14557000" />
+      <workItem from="1604770443131" duration="6842000" />
     </task>
     <task id="LOCAL-00001" summary="Write header files and get window displaying container">
       <created>1604350468367</created>
@@ -172,46 +176,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1604348448793" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604346173790">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604789675119">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604346173790" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604789675119" />
     <state x="326" y="275" key="FileChooserDialogImpl" timestamp="1604203569354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="326" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604203569354" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1604698646900">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1604794165154">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604698646900" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1604698646900">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604794165154" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1604794165154">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604698646900" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1604698646900">
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604794165154" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1604794165154">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604698646900" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1604698646900">
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604794165154" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1604794165154">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604698646900" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1604694283598">
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604794165154" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1604728384389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604694283598" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1604694283598">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604728384389" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1604728384389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604694283598" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1604694283598">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604728384389" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1604728384389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604694283598" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1604694283598">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604728384389" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1604728384389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604694283598" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604728384389" />
     <state x="456" y="168" key="SettingsEditor" timestamp="1604347003147">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
