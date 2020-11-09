@@ -34,16 +34,7 @@
   <component name="ChangeListManager">
     <list default="true" id="38e14706-40ae-44fb-bfc3-71f19964464a" name="Default Changelist" comment="Write header files and get window displaying container">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/core/particle.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/core/particle.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/core/particle_container.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/core/particle_container.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/visualizer/container_visualizer.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/visualizer/ideal_gas_app.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/visualizer/ideal_gas_app.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/visualizer/plot.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/visualizer/plot.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/particle_container.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/particle_container.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualizer/container_visualizer.cc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualizer/ideal_gas_app.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer/ideal_gas_app.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visualizer/plot.cc" beforeDir="false" afterPath="$PROJECT_DIR$/src/visualizer/plot.cc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +127,7 @@
       <workItem from="1604606543322" duration="2248000" />
       <workItem from="1604636327827" duration="740000" />
       <workItem from="1604684249583" duration="14557000" />
-      <workItem from="1604770443131" duration="6842000" />
+      <workItem from="1604770443131" duration="8530000" />
     </task>
     <task id="LOCAL-00001" summary="Write header files and get window displaying container">
       <created>1604350468367</created>
@@ -184,22 +175,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="326" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604203569354" />
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1604794165154">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1604795384484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604794165154" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1604794165154">
+    <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604795384484" />
+    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1604795384484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604794165154" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1604794165154">
+    <state width="1877" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604795384484" />
+    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1604795384484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604794165154" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1604794165154">
+    <state width="1877" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604795384484" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1604795384484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604794165154" />
+    <state width="1877" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604795384484" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1604728384389">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -38,9 +38,13 @@ void ParticleContainer::Update(const float& time_step, const vec2& mouse_locatio
     //float scale = -0.05f * (dist_from_mouse + 5.0f) * (dist_from_mouse - 20.0f);
     //if (scale < 0.0f) scale = 0.0f;
     //particle.velocity *= static_cast<float>(dist_from_mouse > 40.0f);// * (mouse_location - particle.position);
-    particle.velocity += static_cast<float>(dist_from_mouse <= 75.0f) * 1.0f / max(dist_from_mouse, 1.0f) * (particle.position - mouse_location);
-    particle.velocity += static_cast<float>(dist_from_mouse > 75.0f) * (1.0f) / max(dist_from_mouse, 1.0f) / dist_from_mouse * (mouse_location - particle.position);
-
+    if (mouse_location.x >= 0 && mouse_location.x <= width_ && mouse_location.y >= 0 && mouse_location.y <= height_) {
+      //particle.velocity += static_cast<float>(dist_from_mouse <= 75.0f) * 1.0f / max(dist_from_mouse, 1.0f) * (particle.position - mouse_location);
+      //particle.velocity += static_cast<float>(dist_from_mouse > 75.0f) * (1.0f) / max(dist_from_mouse, 1.0f) / dist_from_mouse * (mouse_location - particle.position);
+      bool getting_closer = dot((particle.position - mouse_location),
+                                (particle.velocity)) < 0;
+      particle.velocity *= (dist_from_mouse <= 75.0f && getting_closer) ? -1.0f : 1.0f;
+    }
   }
 }
 
