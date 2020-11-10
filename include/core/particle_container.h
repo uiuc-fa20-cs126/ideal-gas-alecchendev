@@ -6,10 +6,13 @@
 #include <vector>
 #include "particle.h"
 #include <math.h>
+#include <algorithm>
 
 using glm::vec2;
 using std::vector;
 using ci::Color;
+using std::max;
+using std::map;
 
 namespace idealgas {
 
@@ -35,13 +38,19 @@ class ParticleContainer {
    * Checks for particle collisions, updates velocities, and updates positions
    * @param time_step float to indicate the rate of passing time to increase magnitude of movement
    */
-  void Update(const float& time_step);
+  void Update(const float& time_step, const vec2& mouse_location = vec2(-100.0f, -100.0f));
 
   /**
    * Adds particle to containers particle list
    * @param particle Particle to be added
    */
   void AddParticle(const Particle& particle);
+
+  /**
+   * Gets a list of particles grouped by their type
+   * @return Vector of vectors of particles of the same type
+   */
+  map<string, vector<Particle>> GetParticlesByType() const;
 
   const vector<Particle>& getParticles() const;
   const float& getWidth() const;

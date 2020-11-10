@@ -53,7 +53,7 @@ list(APPEND CORE_SOURCE_FILES src/core/particle_container.cc)
 
 list(APPEND SOURCE_FILES    ${CORE_SOURCE_FILES}
                             src/visualizer/ideal_gas_app.cc
-                            src/visualizer/container_visualizer.cc)
+                            src/visualizer/plot.cc)
 
 list(APPEND TEST_FILES tests/particle_container_test.cc)
 
