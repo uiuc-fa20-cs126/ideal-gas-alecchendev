@@ -38,7 +38,7 @@ class ParticleContainer {
    * Checks for particle collisions, updates velocities, and updates positions
    * @param time_step float to indicate the rate of passing time to increase magnitude of movement
    */
-  void Update(const float& time_step, const vec2& mouse_location);
+  void Update(const float& time_step, const vec2& mouse_location = vec2(-100.0f, -100.0f));
 
   /**
    * Adds particle to containers particle list
