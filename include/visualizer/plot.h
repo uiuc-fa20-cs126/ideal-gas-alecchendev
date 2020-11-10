@@ -8,6 +8,7 @@
 
 using ci::Color;
 using std::max;
+using std::string;
 
 namespace idealgas {
 
@@ -42,6 +43,27 @@ class Plot {
    * @param color color of the points
    */
   void DrawScatter(const vector<vec2>& positions, const float& radius, const Color& color = Color(0, 0, 0));
+
+  /**
+   * Draws a string at the top center of the plot
+   * @param label String to display
+   * @param margin Distance from the top of the plot
+   */
+  void LabelTitle(const string& label, const float& margin);
+
+  /**
+   * Draws a string at the bottom center of the plot
+   * @param label String to display
+   * @param margin Distance from bottom of the plot
+   */
+  void LabelXAxis(const string& label, const float& margin);
+
+  /**
+   * Draws a string rotated 90 degrees counter clockwise on the left (vertical) center of the plot
+   * @param label String to display
+   * @param margin Distance from the left side of the plot
+   */
+  void LabelYAxis(const string& label, const float& margin);
 
  private:
   vec2 top_left_corner_;

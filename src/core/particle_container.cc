@@ -16,7 +16,7 @@ ParticleContainer::ParticleContainer(float width, float height, int num_particle
     Particle new_particle = particle_types[idx % particle_types.size()];
     new_particle.position = vec2(Rand::randFloat(new_particle.radius, width_ - new_particle.radius),
                                  Rand::randFloat(new_particle.radius, height_ - new_particle.radius));
-    new_particle.velocity = Rand::randFloat(0, new_particle.radius) * Rand::randVec2();
+    new_particle.velocity = Rand::randFloat(0, new_particle.radius / 2) * Rand::randVec2();
     AddParticle(new_particle);
   }
 }
@@ -34,48 +34,23 @@ void ParticleContainer::Update(const float& time_step, const vec2& mouse_locatio
   }
   for (Particle& particle : particles_) {
     particle.position += particle.velocity * time_step;
+
+    // mouse effect
+    float effect_radius = 75.0f;
     float dist_from_mouse = length(particle.position - mouse_location);
-    //float scale = -0.05f * (dist_from_mouse + 5.0f) * (dist_from_mouse - 20.0f);
-    //if (scale < 0.0f) scale = 0.0f;
-    //particle.velocity *= static_cast<float>(dist_from_mouse > 40.0f);// * (mouse_location - particle.position);
-    if (mouse_location.x >= 0 && mouse_location.x <= width_ && mouse_location.y >= 0 && mouse_location.y <= height_) {
-      //particle.velocity += static_cast<float>(dist_from_mouse <= 75.0f) * 1.0f / max(dist_from_mouse, 1.0f) * (particle.position - mouse_location);
-      //particle.velocity += static_cast<float>(dist_from_mouse > 75.0f) * (1.0f) / max(dist_from_mouse, 1.0f) / dist_from_mouse * (mouse_location - particle.position);
-      bool getting_closer = dot((particle.position - mouse_location),
-                                (particle.velocity)) < 0;
-      particle.velocity *= (dist_from_mouse <= 75.0f && getting_closer) ? -1.0f : 1.0f;
-    }
+    particle.velocity += static_cast<float>(dist_from_mouse <= effect_radius) * 1.0f / max(dist_from_mouse, 1.0f) * (particle.position - mouse_location);
   }
 }
 
-vector<vector<float>> ParticleContainer::GetParticleSpeeds() const {
-  map<float, vector<float>> particle_mass_speeds;
-  for (Particle particle : particles_) {
-    if (particle_mass_speeds.find(particle.mass) == particle_mass_speeds.end() ) {
-      particle_mass_speeds.insert(pair<float, vector<float>>(particle.mass, vector<float>{}));
+map<string, vector<Particle>> ParticleContainer::GetParticlesByType() const {
+  map<string, vector<Particle>> particles_by_mass;
+  for (const Particle& particle : particles_) {
+    if (particles_by_mass.find(particle.type) == particles_by_mass.end() ) {
+      particles_by_mass.insert(pair<string, vector<Particle>>(particle.type, vector<Particle>{}));
     }
-    particle_mass_speeds[particle.mass].push_back((length(particle.velocity)));
+    particles_by_mass[particle.type].push_back(particle);
   }
-  vector<vector<float>> particle_speeds;
-  for(map<float, vector<float>>::iterator it = particle_mass_speeds.begin(); it != particle_mass_speeds.end(); ++it) {
-    particle_speeds.push_back(it->second);
-  }
-  return particle_speeds;
-}
-
-vector<vector<vec2>> ParticleContainer::GetParticlePositions() const {
-  map<float, vector<vec2>> particle_mass_positions;
-  for (Particle particle : particles_) {
-    if (particle_mass_positions.find(particle.mass) == particle_mass_positions.end() ) {
-      particle_mass_positions.insert(pair<float, vector<vec2>>(particle.mass, vector<vec2>{}));
-    }
-    particle_mass_positions[particle.mass].push_back((particle.position));
-  }
-  vector<vector<vec2>> particle_positions;
-  for(map<float, vector<vec2>>::iterator it = particle_mass_positions.begin(); it != particle_mass_positions.end(); ++it) {
-    particle_positions.push_back(it->second);
-  }
-  return particle_positions;
+  return particles_by_mass;
 }
 
 void ParticleContainer::CheckCollisionParticle(Particle& particle, Particle& other_particle) {

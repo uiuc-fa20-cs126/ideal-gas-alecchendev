@@ -8,12 +8,18 @@ namespace visualizer {
 IdealGasApp::IdealGasApp() {
   ci::app::setWindowSize((int) kWindowWidth, (int) kWindowHeight);
 
-  particle_container_ = ParticleContainer(800, 700, 300, kParticleTypes);
+  particle_container_ = ParticleContainer(kContainerWidth, kContainerHeight, kParticles, kParticleTypes);
 
-  plots_.emplace_back(vec2(50, 50), 800.0f, 700.0f);
-  plots_.push_back(Plot(vec2(900, 50), 250.0f, 200.0f));
-  plots_.push_back(Plot(vec2(900, 300), 250.0f, 200.0f));
-  plots_.push_back(Plot(vec2(900, 550), 250.0f, 200.0f));
+  // container plot
+  plots_.emplace_back(vec2(kMargin, kMargin), kContainerWidth, kContainerHeight);
+
+  // histogram plots
+  float height = (kContainerHeight - (kHistMargin * (kParticleTypes.size() - 1))) / kParticleTypes.size();
+  float width = kWindowWidth - (kMargin + kContainerWidth + kContainerHistMargin) - kMargin;
+  for (size_t idx = 0; idx < kParticleTypes.size(); idx++) {
+    vec2 top_left_corner = vec2(kMargin + kContainerWidth + kContainerHistMargin, kMargin + idx * (height + kHistMargin));
+    plots_.emplace_back(top_left_corner, width, height);
+  }
 }
 
 void IdealGasApp::update() {
@@ -21,25 +27,34 @@ void IdealGasApp::update() {
 };
 
 void IdealGasApp::draw() {
-  ci::gl::clear(background_color_);
+  // draw canvas and particle container
+  ci::gl::clear(kBackgroundColor);
+  plots_[0].Draw();
 
-  for (Plot plot : plots_) {
-    plot.Draw();
+  // loop through each type of particle
+  std::map<string, vector<Particle>> particles_by_type = particle_container_.GetParticlesByType();
+  for (size_t idx = 0; idx < kParticleTypes.size(); idx++) {
+    // getting values necessary for drawing
+    Particle particle_type = kParticleTypes[idx];
+    vector<Particle> particles = particles_by_type[particle_type.type];
+    vector<vec2> positions;
+    vector<float> speeds;
+    for (Particle particle : particles) {
+      positions.push_back(particle.position);
+      speeds.push_back(length(particle.velocity));
+    }
+
+    // drawing the particles
+    plots_[0].DrawScatter(positions, particle_type.radius, particle_type.color);
+
+    // drawing the histogram
+    size_t plot_idx = idx + 1;
+    plots_[plot_idx].Draw();
+    plots_[plot_idx].DrawHistogram(speeds, kBins, particle_type.color);
+    plots_[plot_idx].LabelTitle(particle_type.type + " Particle Speed Distribution", kPlotTitleMargin);
+    plots_[plot_idx].LabelXAxis("Speed", kPlotXLabelMargin);
+    plots_[plot_idx].LabelYAxis("# Particles", kPlotYLabelMargin);
   }
-
-  vector<vector<vec2>> particle_positions = particle_container_.GetParticlePositions();
-  Plot container_plot(vec2(50, 50), 800.0f, 700.0f, ci::Color8u(255, 255, 255), ci::Color(0, 0, 0));
-  container_plot.DrawScatter(particle_positions[0], 7.0f, ci::Color8u(52, 146, 235));
-  container_plot.DrawScatter(particle_positions[1], 8.0f, ci::Color8u(235, 150, 52));
-  container_plot.DrawScatter(particle_positions[2], 6.0f, ci::Color8u(130, 92, 48));
-
-  vector<vector<float>> particle_speeds = particle_container_.GetParticleSpeeds();
-  Plot plot1(vec2(900, 50), 250.0f, 200.0f, ci::Color8u(255, 255, 255), ci::Color(0, 0, 0));
-  plot1.DrawHistogram(particle_speeds[0], 15, ci::Color8u(52, 146, 235));
-  Plot plot2(vec2(900, 300), 250.0f, 200.0f, ci::Color8u(255, 255, 255), ci::Color(0, 0, 0));
-  plot2.DrawHistogram(particle_speeds[1], 15, ci::Color8u(235, 150, 52));
-  Plot plot3(vec2(900, 550), 250.0f, 200.0f, ci::Color8u(255, 255, 255), ci::Color(0, 0, 0));
-  plot3.DrawHistogram(particle_speeds[2], 15, ci::Color8u(130, 92, 48));
 }
 
 void IdealGasApp::keyDown(ci::app::KeyEvent event) {

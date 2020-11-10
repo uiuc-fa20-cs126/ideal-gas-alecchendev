@@ -12,6 +12,7 @@ using glm::vec2;
 using std::vector;
 using ci::Color;
 using std::max;
+using std::map;
 
 namespace idealgas {
 
@@ -46,16 +47,10 @@ class ParticleContainer {
   void AddParticle(const Particle& particle);
 
   /**
-   * Gets a list of speeds for each group of particles of the same mass
-   * @return Vector of vectors of floats each containing speeds for particles of each mass
+   * Gets a list of particles grouped by their type
+   * @return Vector of vectors of particles of the same type
    */
-  vector<vector<float>> GetParticleSpeeds() const;
-
-  /**
-   * Gets a list of positions for each group of particles of the same mass
-   * @return Vector of vectors of vec2 each containing positions for particles of each mass
-   */
-  vector<vector<vec2>> GetParticlePositions() const;
+  map<string, vector<Particle>> GetParticlesByType() const;
 
   const vector<Particle>& getParticles() const;
   const float& getWidth() const;

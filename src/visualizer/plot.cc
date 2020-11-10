@@ -33,7 +33,7 @@ void Plot::DrawHistogram(const vector<float>& values, const int& n_bins, const C
     frequencies[bin]++;
     max_frequency = max(max_frequency, frequencies[bin]);
   }
-  max_frequency *= 1.1f;
+  max_frequency *= 1.05f; // so that the highest bar doesn't reach the very top visually
 
   vec2 origin = top_left_corner_ + vec2(0, height_);
   vec2 x_increment = vec2(width_ / n_bins, 0);
@@ -55,6 +55,20 @@ void Plot::DrawScatter(const vector<vec2>& positions, const float& radius, const
     ci::gl::color(color);
     ci::gl::drawSolidCircle(origin + vec2(position.x, -position.y), radius);
   }
+}
+
+void Plot::LabelTitle(const string& label, const float& margin) {
+  ci::gl::drawStringCentered(label,top_left_corner_ + vec2(width_ / 2, -1 * margin),ci::Color(0, 0, 0));
+}
+
+void Plot::LabelXAxis(const string& label, const float& margin) {
+  ci::gl::drawStringCentered(label,top_left_corner_ + vec2(0, height_) + vec2(width_ / 2, 1 * margin),ci::Color(0, 0, 0));
+}
+
+void Plot::LabelYAxis(const string& label, const float& margin) {
+  ci::gl::rotate(-1.57f);
+  ci::gl::drawStringCentered(label,vec2(-1 * top_left_corner_.y, top_left_corner_.x) + vec2(-1 * height_ / 2, -1 * margin),ci::Color(0, 0, 0));
+  ci::gl::rotate(1.57f);
 }
 
 }  // namespace visualizer
